@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="180" height="180" version="1.1" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linearGradient4" x1="123.4" x2="15.304" y1="90.121" y2="90.121" gradientTransform="translate(-3.1579)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#ebf2fa" offset="0"/>
+   <stop stop-color="#aab8d0" stop-opacity=".9372" offset=".66784"/>
+   <stop stop-color="#8797b4" stop-opacity="0" offset="1"/>
+  </linearGradient>
+  <linearGradient id="linearGradient6" x1="61.822" x2="40.445" y1="90" y2="90" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fcc984" offset="0"/>
+   <stop stop-color="#fcc984" stop-opacity="0" offset="1"/>
+  </linearGradient>
+ </defs>
+ <g stroke-miterlimit="2.6" stroke-width="0">
+  <circle cx="90" cy="90" r="82.348" fill="url(#linearGradient6)" style="paint-order:stroke fill markers"/>
+  <path d="m11.66 172.23s52.47-0.24291 95.709-0.24291c43.239 0 45.182-36.437 45.182-45.911 0-9.4737-7.5304-36.437-44.939-36.437-37.409 0-40.688-34.98-40.688-40.688s2.7935-41.417 40.445-41.417h77.976-173.68z" fill="url(#linearGradient4)" style="paint-order:stroke fill markers"/>
+ </g>
+</svg>
