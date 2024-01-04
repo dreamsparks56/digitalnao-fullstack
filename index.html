@@ -55,34 +55,51 @@
    <p class="fs-3 fw-light mb-5">Por favor, ingresar los siguientes datos</p>
    <!-- TODO: Diseñar el formulario-->
    <p class="fs-3 fw-semibold mb-5">En progreso</p>
-   <div class="col-lg-6">
-    <div class="row mt-3">
-      <div class="col-lg-6">
-        <label for="fNombre" class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="fNombre" placeholder="Nombre">
+   <form>
+    <div class="col-lg-6">
+      <div class="row mt-3">
+        <div class="col-lg-6 ">
+          <div class="form-floating">
+            <input type="text" class="form-control" id="fNombre" placeholder="Nombre">
+            <label for="fNombre">Nombre</label>
+          </div>          
+        </div>
+        <div class="col-lg-6 mt-3 mt-lg-0">
+          <div class="form-floating">
+            <input type="text" class="form-control" id="fApellido" placeholder="Apellido">
+            <label for="fApellido">Apellido</label>
+          </div>
+        </div>
       </div>
-      <div class="col-lg-6 mt-sm-3 mt-lg-0">
-        <label for="fApellido" class="form-label">Apellido</label>
-        <input type="text" class="form-control" id="fApellido" placeholder="Apellido">
+      <div class="row mt-3">
+        <div class="col-lg-6">
+          <div class="form-floating">
+            <input type="tel" class="form-control" id="fTel" placeholder="Teléfono de contacto">    
+            <label for="fTel">Teléfono de contacto</label>    
+          </div>
+        </div>
+        <div class="col-lg-6 mt-3 mt-lg-0">
+          <div class="form-floating">
+            <input type="date" class="form-control" id="fFecha">
+            <label for="fFecha" >Fecha de nacimiento</label>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col">
+          <div class="form-floating">
+            <input type="mail" class="form-control" id="fMail" placeholder="ejemplo@mail.com">
+            <label for="fNombre" class="form-label">Dirección de correo electrónico</label>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-3">        
+        <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-start">
+          <button class="btn btn-primary" type="submit">Enviar</button>
+        </div>
       </div>
     </div>
-    <div class="row mt-3">
-      <div class="col-lg-6">
-        <label for="fTel" class="form-label">Teléfono de contacto</label>
-        <input type="tel" class="form-control" id="fTel" placeholder="Teléfono de contacto">        
-      </div>
-      <div class="col-lg-6 mt-sm-3 mt-lg-0">
-        <label for="fFecha" class="form-label">Fecha de nacimiento</label>
-        <input type="date" class="form-control" id="fFecha">        
-      </div>
-    </div>
-    <div class="row mt-3">
-      <div class="col">
-        <label for="fNombre" class="form-label">Dirección de correo electrónico</label>
-        <input type="mail" class="form-control" id="fMail" placeholder="ejemplo@mail.com">
-      </div>
-    </div>
-  </div>
+  </form>
 </div>
   </main>
   <footer class="bg-white py-4 mt-auto">
