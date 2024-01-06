@@ -29,14 +29,15 @@ body {
 
 nav {
   background: linear-gradient(156deg, #fcC794AF, #fcf7cc);
-  backdrop-filter: blur(1.3px);
   -webkit-backdrop-filter: blur(1.3px);
+  backdrop-filter: blur(1.3px);
   transition: 0.35s ease-in-out;
 }
 
 nav:hover {
-  backdrop-filter: blur(5.7px);
-  -webkit-backdrop-filter: blur(5.7px);
+  background: linear-gradient(158deg, #fcC794B9, #fcf7cc);
+  -webkit-backdrop-filter: blur(6.7px);
+  backdrop-filter: blur(6.7px);
 }
 
 .nav-link {

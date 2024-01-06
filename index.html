@@ -15,7 +15,7 @@
   <main>
     <nav class="navbar navbar-expand-lg sticky-top navbar-light py-3">
       <div class="container px-5">
-         <a class="navbar-brand logo" href="index.html"><img src="assets/icon.svg" width="40px"/></a>
+         <a class="navbar-brand logo" href="index.html"><img src="assets/icon.svg" width="40px" alt="Logotipo del emprendimiento de Caroline Sada"/></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
@@ -42,20 +42,18 @@
             <div class="col-xxl-7">
                <div class="d-flex justify-content-center mt-5 mt-xxl-0">
                    <div class="profile">
-                       <img class="profile-img" src="assets/undraw_creative_woman_re_u5tk.svg" />
+                       <img class="profile-img" src="assets/undraw_creative_woman_re_u5tk.svg" alt='Representación visual de " llevar emprendimientos al siguiente nivel"'/>
                    </div>
                </div>
            </div>
        </div>
    </div>
 </header>
-<img class="stroke-2" src="assets/Stroke-2.svg">
+<img class="stroke-2" src="assets/Stroke-2.svg" alt=null>
 <div  class="container px-5 pb-5" id="insc-form">
    <h1 class="display-3 fw-bold">Formulario de inscripción</h1>
-   <p class="fs-3 fw-light mb-5">Por favor, ingresar los siguientes datos</p>
-   <!-- TODO: Diseñar el formulario-->
-   <p class="fs-3 fw-semibold mb-5">En progreso</p>
-   <form>
+   <p class="fs-3 fw-light mb-5">Por favor, ingresar los siguientes datos, proporcionando al menos un medio de contacto</p>
+   <form id="fDatos" class="needs-validation" novalidate>
     <div class="col-lg-6">
       <div class="row mt-3">
         <div class="col-lg-6 ">
@@ -96,7 +94,7 @@
       <div class="row mt-3">
         <div class="col">
           <div class="form-floating">
-            <input type="mail" class="form-control" id="fMail" placeholder="ejemplo@mail.com">
+            <input type="mail" class="form-control" id="fMail" placeholder="ejemplo@mail.com" pattern=".+@.+\..+">
             <label for="fMail" class="form-label">Dirección de correo electrónico</label>
             <div class="invalid-feedback" id="invalid-correo"></div>
           </div>
@@ -104,7 +102,7 @@
       </div>
       <div class="row mt-3">        
         <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-start">
-          <button class="btn btn-primary" type="submit" onclick="checkSubmission()">Enviar</button>
+          <button class="btn btn-primary" type="submit" onSubmit="checkSubmission()">Enviar</button>
         </div>
       </div>
     </div>

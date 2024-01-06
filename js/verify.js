@@ -1,3 +1,15 @@
+const form = document.getElementById("fDatos")
+
+form.addEventListener('submit', event => {
+  checkSubmission()
+  if (!form.checkValidity()) {
+    event.preventDefault()
+    event.stopPropagation()
+  }
+
+  form.classList.add('was-validated')
+}, false)
+
 const vacio = (campo) => {
   let estaVacio = true
   if(campo != "" && campo != null) {
@@ -49,9 +61,9 @@ const checkSubmission = () => {
   const telInvalid = document.getElementById("invalid-tel")
   const emailInvalid = document.getElementById("invalid-correo")
   if(vacio(tel.value) && vacio(e.value)) {
-    tel.classList.add("is-invalid")
-    e.classList.add("is-invalid")
     const medioVacioMensaje = "Por favor, ingrese un medio de contacto"
+    tel.setCustomValidity(medioVacioMensaje)
+    e.setCustomValidity(medioVacioMensaje)
     telInvalid.innerHTML = medioVacioMensaje
     emailInvalid.innerHTML = medioVacioMensaje
   } else {
@@ -59,6 +71,7 @@ const checkSubmission = () => {
       tel.classList.add("is-invalid")
       telInvalid.innerHTML = "El teléfono ingresado no es válido"
     } else {    
+      tel.setCustomValidity("")
       tel.classList.remove("is-invalid")
     }
   
@@ -66,6 +79,7 @@ const checkSubmission = () => {
       e.classList.add("is-invalid")
       emailInvalid.innerHTML = "El email ingresado no es válido"
     } else {    
+      e.setCustomValidity("")
       e.classList.remove("is-invalid")
     }
   }
@@ -76,11 +90,14 @@ const checkSubmission = () => {
     dateInvalid.innerHTML = "Por favor, ingrese una fecha de nacimiento"
   } else {    
     if(!verificarFecha(f.value)) {
-      f.classList.add("is-invalid")
-      dateInvalid.innerHTML = "La fecha de nacimiento ingresada no es válida"
+      const fechaInvMensaje = "La fecha de nacimiento ingresada no es válida"
+      f.setCustomValidity(fechaInvMensaje)
+      dateInvalid.innerHTML = fechaInvMensaje
     }else {
+      f.setCustomValidity("")
       f.classList.remove("is-invalid")
     }
   }
 
+  form.classList.add("was-validated")
 }
