@@ -1,15 +1,3 @@
-const form = document.getElementById("fDatos")
-
-form.addEventListener('submit', event => {
-  checkSubmission()
-  if (!form.checkValidity()) {
-    event.preventDefault()
-    event.stopPropagation()
-  }
-
-  form.classList.add('was-validated')
-}, false)
-
 const vacio = (campo) => {
   let estaVacio = true
   if(campo != "" && campo != null) {
@@ -26,6 +14,56 @@ const verificar = (texto, exp) => {
   }
 }
 
+const form = document.getElementById("fDatos")
+const email = document.getElementById("fMail")
+const tel = document.getElementById("fTel")
+
+const emailInvalid = document.getElementById("invalid-correo")
+const telInvalid = document.getElementById("invalid-tel")
+
+const emailNoValidoMensaje = "El email ingresado no es válido"
+const telefonoNoValidoMensaje = "El teléfono ingresado no es válido"
+const medioVacioMensaje = "Por favor, ingrese un medio de contacto"
+
+form.addEventListener('submit', event => {
+  checkSubmission()
+  if (!form.checkValidity()) {
+    event.preventDefault()
+    event.stopPropagation()
+  }
+
+  if(vacio)
+
+  form.classList.add('was-validated')
+}, false)
+
+email.addEventListener('input', event => {
+  if(vacio(email.value) && vacio(tel.value)) {
+    email.setCustomValidity(medioVacioMensaje)
+    emailInvalid.innerHTML = medioVacioMensaje
+
+  } else if (email.validity.typeMismatch) {
+    email.setCustomValidity(emailNoValidoMensaje)
+    emailInvalid.innerHTML = emailNoValidoMensaje
+  } else {
+    email.setCustomValidity("")
+  }
+});
+
+tel.addEventListener('input', event => {
+  if(vacio(tel.value) && vacio(email.value)) {
+    tel.setCustomValidity(medioVacioMensaje)
+    telInvalid.innerHTML = medioVacioMensaje
+  } else if (tel.validity.patternMismatch) {
+    tel.setCustomValidity(
+      telefonoNoValidoMensaje,
+    );    
+    telInvalid.innerHTML = telefonoNoValidoMensaje
+  } else {
+    tel.setCustomValidity("");
+  }
+});
+
 const verificarFecha = (fecha) => {
   const mEdad = 18
     const hoy = new Date()
@@ -41,46 +79,28 @@ const verificarFecha = (fecha) => {
 }
 
 const checkSubmission = () => {
-  const n = document.getElementById("fNombre")
-  const a = document.getElementById("fApellido")
-  const tel = document.getElementById("fTel")
   const f = document.getElementById("fFecha")
-  const e = document.getElementById("fMail")
 
-  if(vacio(n.value)) {
-    n.classList.add("is-invalid")
-  } else {    
-    n.classList.remove("is-invalid")
-  }
-  if(vacio(a.value)) {
-    a.classList.add("is-invalid")
-  } else {    
-    a.classList.remove("is-invalid")
-  }
-
-  const telInvalid = document.getElementById("invalid-tel")
-  const emailInvalid = document.getElementById("invalid-correo")
-  if(vacio(tel.value) && vacio(e.value)) {
-    const medioVacioMensaje = "Por favor, ingrese un medio de contacto"
+  if(vacio(tel.value) && vacio(email.value)) {
     tel.setCustomValidity(medioVacioMensaje)
-    e.setCustomValidity(medioVacioMensaje)
+    email.setCustomValidity(medioVacioMensaje)
     telInvalid.innerHTML = medioVacioMensaje
     emailInvalid.innerHTML = medioVacioMensaje
   } else {
-    if(!vacio(tel.value) && !verificar(tel.value, /^(?:([+]\d{1,4})[-.\s]?)?(?:[(](\d{1,3})[)][-.\s]?)?(\d{1,4})[-.\s]?(\d{1,4})[-.\s]?(\d{1,9})$/)) {
+    if(!vacio(tel.value) && tel.validity.patternMismatch) {
       tel.classList.add("is-invalid")
-      telInvalid.innerHTML = "El teléfono ingresado no es válido"
+      telInvalid.innerHTML = telefonoNoValidoMensaje
     } else {    
       tel.setCustomValidity("")
       tel.classList.remove("is-invalid")
-    }
+    }    
   
-    if(!vacio(e.value) && !verificar(e.value, ".+@.+\..+")) {
-      e.classList.add("is-invalid")
+    if(!vacio(email.value) && email.validity.typeMismatch) {
+      email.classList.add("is-invalid")
       emailInvalid.innerHTML = "El email ingresado no es válido"
     } else {    
-      e.setCustomValidity("")
-      e.classList.remove("is-invalid")
+      email.setCustomValidity("")
+      email.classList.remove("is-invalid")
     }
   }
 
