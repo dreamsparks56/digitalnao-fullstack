@@ -13,101 +13,166 @@
 </head>
 <body>
   <main>
-    <nav class="navbar navbar-expand-lg sticky-top navbar-light py-3">
+    <nav class="navbar navbar-expand-lg sticky-top navbar-light py-3" id="contenido">
       <div class="container px-5">
          <a class="navbar-brand logo" href="index.html"><img src="assets/icon.svg" width="40px" alt="Logotipo del emprendimiento de Caroline Sada"/></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                  <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Inicio</a></li>
-                  <li class="nav-item"><a class="nav-link" href="about.html">Sobre mí</a></li>
+                  <li class="nav-item"><a class="nav-link active" aria-current="page" href="#inicio">Inicio</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#about">Sobre mí</a></li>
+                  <li class="nav-item"><a class="nav-link" href="#insc-form">Inscribirse</a></li>
               </ul>
           </div>
       </div>
-  </nav>
-  <header class="py-5">
-   <div class="container px-5 pb-5">
-       <div class="row gx-5 align-items-center">
-         <div class="col-xxl-5">
-            <div class="text-center text-xxl-start">
-                  <div class="fs-3 fw-normal text-muted">Lleva tus emprendimientos al siguiente nivel</div>
-                  <h1 class="display-3 fw-bolder"><span class="d-inline">Finanzas: la guía definitiva</span></h1>
-                  <div class="fs-3 fw-light mb-5">Un nuevo curso de Caroline Sada</div>
-                  <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
-                     <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="#insc-form" >Inscribirse</a>
-                     <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="about.html">Sobre mí</a>
-                  </div>                  
+    </nav>
+    <section data-bs-spy="scroll" data-bs-target="#contenido">
+    <header class="py-5" id="inicio">
+    <div class="container px-5 pb-5">
+        <div class="row gx-5 align-items-center">
+          <div class="col-xxl-5">
+              <div class="text-center text-xxl-start">
+                    <div class="fs-3 fw-normal text-muted">Lleva tus emprendimientos al siguiente nivel</div>
+                    <h1 class="display-3 fw-bolder"><span class="d-inline">Finanzas: la guía definitiva</span></h1>
+                    <div class="fs-3 fw-light mb-5">Un nuevo curso de Caroline Sada</div>
+                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xxl-start mb-3">
+                      <a class="btn btn-primary btn-lg px-5 py-3 me-sm-3 fs-6 fw-bolder" href="#insc-form" >Inscribirse</a>
+                      <a class="btn btn-outline-dark btn-lg px-5 py-3 fs-6 fw-bolder" href="#about">Sobre mí</a>
+                    </div>                  
+              </div>
+              </div>
+              <div class="col-xxl-7">
+                <div class="d-flex justify-content-center mt-5 mt-xxl-0">
+                    <div class="profile">
+                        <img class="profile-img" src="assets/undraw_creative_woman_re_u5tk.svg" alt='Representación visual de " llevar emprendimientos al siguiente nivel"'/>
+                    </div>
+                </div>
             </div>
-            </div>
-            <div class="col-xxl-7">
-               <div class="d-flex justify-content-center mt-5 mt-xxl-0">
-                   <div class="profile">
-                       <img class="profile-img" src="assets/undraw_creative_woman_re_u5tk.svg" alt='Representación visual de " llevar emprendimientos al siguiente nivel"'/>
-                   </div>
-               </div>
-           </div>
-       </div>
-   </div>
-</header>
-<img class="stroke-2" src="assets/Stroke-2.svg" alt=null>
-<div  class="container px-5 pb-5" id="insc-form">
-   <h1 class="display-3 fw-bold">Formulario de inscripción</h1>
-   <p class="fs-3 fw-light mb-5">Por favor, ingresar los siguientes datos, proporcionando al menos un medio de contacto</p>
-   <form id="fDatos" class="needs-validation" novalidate>
-    <div class="col-lg-6">
-      <div class="row mt-3">
-        <div class="col-lg-6 ">
-          <div class="form-floating">
-            <input type="text" class="form-control" id="fNombre" placeholder="Nombre" required>
-            <label for="fNombre">Nombre</label>
-            <div class="invalid-feedback">
-              Por favor, ingrese un nombre
-            </div>
-          </div>          
-        </div>
-        <div class="col-lg-6 mt-3 mt-lg-0">
-          <div class="form-floating">
-            <input type="text" class="form-control" id="fApellido" placeholder="Apellido" required>
-            <label for="fApellido">Apellido</label>
-            <div class="invalid-feedback">
-              Por favor, ingrese un apellido
-            </div>
-          </div>
         </div>
       </div>
-      <div class="row mt-3">
-        <div class="col-lg-6">
-          <div class="form-floating">
-            <input type="tel" class="form-control" id="fTel" placeholder="Teléfono de contacto" pattern="^(?:(([+]\d{1,4})[\-.\s]?)?([\(](\d{1,3})[\)][\-.\s]?)?(\d{1,4})[\-.\s]?(\d{1,4})[\-.\s]?(\d{1,9}).*)$">
-            <label for="fTel">Teléfono de contacto</label>
-            <div class="invalid-feedback" id="invalid-tel"></div>
+    </header>
+    <img class="stroke-2" src="assets/Stroke-2.svg" alt=null>
+    <div class="container-fluid px-5 py-5 bg-secondary" id="about">
+      <h1 class="display-3 fw-bolder text-center text-white"><span class="d-inline">Sobre mí</span></h1>
+      <div id="carouselAbout" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselAbout" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Descripción"></button>
+          <button type="button" data-bs-target="#carouselAbout" data-bs-slide-to="1" aria-label="Me conocen porque"></button>
+          <button type="button" data-bs-target="#carouselAbout" data-bs-slide-to="2" aria-label="Visión"></button>
+        </div>
+        <div class="carousel-inner pb-3">
+          <div class="carousel-item active">
+            <div class="row gx-5 px-5 align-items-center justify-content-evenly">
+              <div class="col-lg-3">
+                <div class="text-center text-xxl-start">  
+                  <p class="fs-3 fw-light text-white">Me llamo Caroline Sada, soy Licenciada en Administración de Empresas, tengo 34 años, y desde hace 3 soy influencer financiera.</p>             
+                </div>
+              </div>
+              <div class="col-lg-5 d-flex justify-content-center">
+                <div class="profile">
+                  <img class="about-img" src="assets/undraw_my_universe_803e.svg" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row gx-5 px-5 align-items-center justify-content-evenly">
+              <div class="col-lg-3">
+                <div class="text-center text-lg-start">  
+                  <p class="fs-3 fw-light text-white">He desarrollado contenido variado para distintas redes sociales, a través de las cuáles mis consejos de finanzas han llegado a millones de personas.</p>             
+                </div>
+              </div>
+              <div class="col-lg-5 d-flex justify-content-center">
+                <div class="profile">
+                  <img class="about-img" src="assets/undraw_influencer_re_1fkb.svg" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="row gx-5 px-5 align-items-center justify-content-evenly"> 
+              <div class="col-lg-5 d-flex justify-content-center">
+                <div class="profile">
+                  <img class="about-img" src="assets/undraw_creative_woman_re_u5tk.svg" />
+                </div>
+              </div>
+              <div class="col-lg-4">
+                <div class="text-center text-lg-start">  
+                  <p class="fs-3 fw-light text-white">Creo que es importante que cualquier persona pueda acceder a información financiera, y que el conocimiento, la comunicación y la empatía van de la mano, por eso doy lo mejor de mí en cada nueva pizca de información que llevo al mundo.</p>             
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col-lg-6 mt-3 mt-lg-0">
-          <div class="form-floating">
-            <input type="date" class="form-control" id="fFecha" onChange="validarFecha()" required>
-            <label for="fFecha" >Fecha de nacimiento</label>
-            <div class="invalid-feedback" id="invalid-fecha"></div>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-3">
-        <div class="col">
-          <div class="form-floating">
-            <input type="email" class="form-control" id="fMail" placeholder="ejemplo@mail.com">
-            <label for="fMail" class="form-label">Dirección de correo electrónico</label>
-            <div class="invalid-feedback" id="invalid-correo"></div>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-3">        
-        <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-start">
-          <button class="btn btn-primary" type="submit" onSubmit="checkSubmission()">Enviar</button>
-        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselAbout" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselAbout" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
       </div>
     </div>
-  </form>
-</div>
+    <div class="container px-5 py-5" id="insc-form">
+      <h1 class="display-3 fw-bold">Formulario de inscripción</h1>
+      <p class="fs-3 fw-light mb-5">Por favor, ingresar los siguientes datos, proporcionando al menos un medio de contacto</p>
+      <form id="fDatos" class="needs-validation" novalidate>
+        <div class="col-lg-6">
+          <div class="row mt-3">
+            <div class="col-lg-6 ">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="fNombre" placeholder="Nombre" required>
+                <label for="fNombre">Nombre</label>
+                <div class="invalid-feedback">
+                  Por favor, ingrese un nombre
+                </div>
+              </div>          
+            </div>
+            <div class="col-lg-6 mt-3 mt-lg-0">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="fApellido" placeholder="Apellido" required>
+                <label for="fApellido">Apellido</label>
+                <div class="invalid-feedback">
+                  Por favor, ingrese un apellido
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-lg-6">
+              <div class="form-floating">
+                <input type="tel" class="form-control" id="fTel" placeholder="Teléfono de contacto" pattern="^(?:(([+]\d{1,4})[\-.\s]?)?([\(](\d{1,3})[\)][\-.\s]?)?(\d{1,4})[\-.\s]?(\d{1,4})[\-.\s]?(\d{1,9}).*)$">
+                <label for="fTel">Teléfono de contacto</label>
+                <div class="invalid-feedback" id="invalid-tel"></div>
+              </div>
+            </div>
+            <div class="col-lg-6 mt-3 mt-lg-0">
+              <div class="form-floating">
+                <input type="date" class="form-control" id="fFecha" onChange="validarFecha()" required>
+                <label for="fFecha" >Fecha de nacimiento</label>
+                <div class="invalid-feedback" id="invalid-fecha"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col">
+              <div class="form-floating">
+                <input type="email" class="form-control" id="fMail" placeholder="ejemplo@mail.com">
+                <label for="fMail" class="form-label">Dirección de correo electrónico</label>
+                <div class="invalid-feedback" id="invalid-correo"></div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">        
+            <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-start">
+              <button class="btn btn-primary" type="submit" onSubmit="checkSubmission()">Enviar</button>
+            </div>
+          </div>
+        </div>
+      </form>
+      </div>
+  </section>
   </main>
   <footer class="bg-white py-4 mt-auto">
     <div class="row align-items-center justify-content-between flex-column flex-sm-row">
@@ -118,7 +183,8 @@
                 <h5 class="fw-semibold"><span class="d-inline">Navegación</span></h2>
                 <ul class="list-unstyled gap-2">
                   <li class="nav-item"><a class="nav-link" href="index.html"><span class="link-color">Inicio</span></a></li>
-                  <li class="nav-item"><a class="nav-link" href="about.html"><span class="link-color">Sobre mí</span></a></li>
+                  <li class="nav-item"><a class="nav-link" href="#about"><span class="link-color">Sobre mí</span></a></li>
+                  <li class="nav-item"><a class="nav-link" href="#about"><span class="link-color">Inscribirse</span></a></li>
                 </ul>
               </div>
                 <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
