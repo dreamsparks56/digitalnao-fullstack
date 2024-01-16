@@ -17,6 +17,7 @@ const verificar = (texto, exp) => {
 const form = document.getElementById("fDatos")
 const email = document.getElementById("fMail")
 const tel = document.getElementById("fTel")
+const fecha = document.getElementById("fFecha")
 
 const emailInvalid = document.getElementById("invalid-correo")
 const telInvalid = document.getElementById("invalid-tel")
@@ -31,8 +32,6 @@ form.addEventListener('submit', event => {
     event.preventDefault()
     event.stopPropagation()
   }
-
-  if(vacio)
 
   form.classList.add('was-validated')
 }, false)
@@ -64,23 +63,7 @@ tel.addEventListener('input', event => {
   }
 });
 
-const verificarFecha = (fecha) => {
-  const mEdad = 18
-    const hoy = new Date()
-    const fechaValida = new Date(hoy.getFullYear() - mEdad, hoy.getMonth(), hoy.getDate(), 0, 0, 0)
-
-    const fValor = new Date(fecha)
-    fValor.setHours(fValor.getHours() + fValor.getTimezoneOffset()/60)
-    if(fValor < fechaValida) {
-      return true
-    } else {
-      return false
-    }
-}
-
-const checkSubmission = () => {
-  const f = document.getElementById("fFecha")
-
+const validarMedios = () => {
   if(vacio(tel.value) && vacio(email.value)) {
     tel.setCustomValidity(medioVacioMensaje)
     email.setCustomValidity(medioVacioMensaje)
@@ -97,27 +80,46 @@ const checkSubmission = () => {
   
     if(!vacio(email.value) && email.validity.typeMismatch) {
       email.classList.add("is-invalid")
-      emailInvalid.innerHTML = "El email ingresado no es válido"
+      emailInvalid.innerHTML = emailNoValidoMensaje
     } else {    
       email.setCustomValidity("")
       email.classList.remove("is-invalid")
     }
   }
+}
 
+const validarFecha = () => {
   const dateInvalid = document.getElementById("invalid-fecha")
-  if(vacio(f.value)) {
-    f.classList.add("is-invalid")
+  if(vacio(fecha.value)) {
+    fecha.classList.add("is-invalid")
     dateInvalid.innerHTML = "Por favor, ingrese una fecha de nacimiento"
   } else {    
-    if(!verificarFecha(f.value)) {
+    if(!verificarFecha(fecha.value)) {
       const fechaInvMensaje = "La fecha de nacimiento ingresada no es válida"
-      f.setCustomValidity(fechaInvMensaje)
+      fecha.setCustomValidity(fechaInvMensaje)
       dateInvalid.innerHTML = fechaInvMensaje
     }else {
-      f.setCustomValidity("")
-      f.classList.remove("is-invalid")
+      fecha.setCustomValidity("")
+      fecha.classList.remove("is-invalid")
     }
   }
+}
 
-  form.classList.add("was-validated")
+const verificarFecha = (fecha) => {
+  const mEdad = 18
+    const hoy = new Date()
+    const fechaValida = new Date(hoy.getFullYear() - mEdad, hoy.getMonth(), hoy.getDate(), 0, 0, 0)
+
+    const fValor = new Date(fecha)
+    fValor.setHours(fValor.getHours() + fValor.getTimezoneOffset()/60)
+    if(fValor < fechaValida) {
+      return true
+    } else {
+      return false
+    }
+}
+
+const checkSubmission = () => {
+  validarMedios()  
+  validarFecha()
 }
