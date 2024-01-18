@@ -27,16 +27,25 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-nav {
+.navbar {
   background: linear-gradient(156deg, #fcC794AF, #fcf7cc);
-  backdrop-filter: blur(1.3px);
   -webkit-backdrop-filter: blur(1.3px);
+  backdrop-filter: blur(1.3px);
+  padding-top:1rem;
+  padding-bottom:1rem;
   transition: 0.35s ease-in-out;
 }
 
+nav.navbar-scrolled {
+  padding-top:0.35rem;
+  padding-bottom:0.35rem;
+  transition: 0.4s ease-in-out;
+}
+
 nav:hover {
-  backdrop-filter: blur(5.7px);
-  -webkit-backdrop-filter: blur(5.7px);
+  background: linear-gradient(158deg, #fcC794B9, #fcf7cc);
+  -webkit-backdrop-filter: blur(6.7px);
+  backdrop-filter: blur(6.7px);
 }
 
 .nav-link {
@@ -112,8 +121,9 @@ a:hover {
 .stroke {
   position: absolute;
   right: 0vw;
-  top: 45vw;
+  top: 188vh;
   z-index: -1;
+  width: 100%;
 }
 
 .stroke-2 {
@@ -131,4 +141,8 @@ a:hover {
 .logo:hover {
   filter: drop-shadow(4px 4px 5px rgb(70 60 30 / 0.4));
   transition: 0.15s ease-in-out;
+}
+
+#insc-form {
+  min-height: 450px;
 }
