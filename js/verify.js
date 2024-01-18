@@ -14,6 +14,25 @@ const verificar = (texto, exp) => {
   }
 }
 
+const postEnvio =() => {
+  
+  const graciasTitulo = document.createElement("h1")
+  graciasTitulo.innerHTML = "Gracias por completar el formulario"
+  graciasTitulo.classList.add("display-3")
+  graciasTitulo.classList.add("fw-bold")
+
+  const graciasSubtexto = document.createElement("h4")
+  graciasSubtexto.innerHTML = "Nos pondremos en contacto a la brevedad"
+  graciasSubtexto.classList.add("fs-3")
+  graciasSubtexto.classList.add("fw-light")
+
+  
+  const seccionFormulario = document.getElementById("insc-form")
+  seccionFormulario.innerHTML = ""
+  seccionFormulario.appendChild(graciasTitulo)
+  seccionFormulario.appendChild(graciasSubtexto)
+}
+
 const form = document.getElementById("fDatos")
 const email = document.getElementById("fMail")
 const tel = document.getElementById("fTel")
@@ -31,9 +50,11 @@ form.addEventListener('submit', event => {
   if (!form.checkValidity()) {
     event.preventDefault()
     event.stopPropagation()
+  } else {    
+    postEnvio()
   }
 
-  form.classList.add('was-validated')
+  form.classList.add("was-validated")
 }, false)
 
 email.addEventListener('input', event => {
