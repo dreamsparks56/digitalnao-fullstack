@@ -121,8 +121,9 @@ a:hover {
 .stroke {
   position: absolute;
   right: 0vw;
-  top: 45vw;
+  top: 188vh;
   z-index: -1;
+  width: 100%;
 }
 
 .stroke-2 {
@@ -140,4 +141,8 @@ a:hover {
 .logo:hover {
   filter: drop-shadow(4px 4px 5px rgb(70 60 30 / 0.4));
   transition: 0.15s ease-in-out;
+}
+
+#insc-form {
+  min-height: 450px;
 }
