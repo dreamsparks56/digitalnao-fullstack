@@ -58,11 +58,11 @@ nav:hover {
 }
 
 .btn-primary {
-  --bs-btn-color: #fff;
+  --bs-btn-color: #000;
   --bs-btn-bg: var(--bs-primary);
   --bs-btn-border-color:  var(--bs-primary);;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #fc9954;
+  --bs-btn-hover-color: #000;
+  --bs-btn-hover-bg: #fdaf74;
   --bs-btn-hover-border-color: #fa7936;
   --bs-btn-focus-shadow-rgb: 64, 79, 245;
   --bs-btn-active-color: #fff;
@@ -90,6 +90,9 @@ nav:hover {
   left: 50%;
 }
 
+.profile .profile-img svg {  
+  box-shadow: 5px 5px 5px black;
+}
 
 .profile .about-img {
   height: 30vw;
@@ -129,7 +132,7 @@ a:hover {
 .stroke-2 {
   position: absolute;
   right: 0vw;
-  top: 15vw;
+  top: 15vh;
   z-index: -1;
 }
 
@@ -145,4 +148,13 @@ a:hover {
 
 #insc-form {
   min-height: 450px;
+}
+
+@media (max-width: 576px) {
+  .stroke-2 {
+    position: absolute;
+    right: 0vw;
+    top: 26vh;
+    z-index: -1;
+  }
 }
